@@ -1,3 +1,19 @@
+# Eventbrite RSS – Göteborg (bredare urval)
 - type: rss
-  url: https://www.eventbrite.com/d/sweden--gothenburg/technology--events/rss/
+  url: https://www.eventbrite.com/d/sweden--gothenburg/science-and-tech--events/rss/
   category: tech
+- type: rss
+  url: https://www.eventbrite.com/d/sweden--gothenburg/networking--events/rss/
+  category: networking
+- type: rss
+  url: https://www.eventbrite.com/d/sweden--gothenburg/business--events/rss/
+  category: business
+- type: rss
+  url: https://www.eventbrite.com/d/sweden--gothenburg/marketing--events/rss/
+  category: marketing
+
+# (Valfritt) Meetup-ICS – byt <group> mot en faktisk grupps URL-del
+# Gå till en Meetup-grupp du följer → "Subscribe"/"Add to calendar" → kopiera ICS-länken
+# - type: ics
+#   url: https://www.meetup.com/<group>/events/ical
+#   category: mixed
