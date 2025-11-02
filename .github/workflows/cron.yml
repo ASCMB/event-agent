@@ -7,4 +7,4 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Workflow fungerar!"
+      - run: echo "Workflow fungerar!" 
