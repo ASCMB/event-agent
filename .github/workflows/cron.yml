@@ -16,7 +16,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run agent
-        run: python agent.py --sources sources.yml --out out --days 60
+  run: python agent.py --sources sources.yml --out out --days 180
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
