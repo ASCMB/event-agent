@@ -1,10 +1,25 @@
 name: event-agent
 on:
-  push:            # kör vid varje ändring på main
-    branches: [ main ]
-  workflow_dispatch:  # visar "Run workflow"-knappen
+  schedule:
+    - cron: "0 6 * * 1"   # kör måndagar 06:00 UTC (~07–08 svensk tid)
+  workflow_dispatch:      # så du kan köra manuellt
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Workflow fungerar!" 
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run agent
+        run: python agent.py --sources sources.yml --out out --days 60
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: events-output
+          path: out/*
+
