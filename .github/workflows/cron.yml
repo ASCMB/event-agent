@@ -6,5 +6,3 @@ jobs:
     steps:
       - run: echo "Test körning fungerar!"
 
-          path: out/*
-          if-no-files-found: warn
