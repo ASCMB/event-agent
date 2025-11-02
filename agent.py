@@ -43,6 +43,7 @@ def load_sources(path):
     with open(path, "r", encoding="utf-8") as f: return yaml.safe_load(f) or []
 
 def looks_relevant(rec):
+    return True
     blob = " ".join([rec.get("title",""), rec.get("description",""), rec.get("location","")])
     return bool(KEYWORDS.search(blob)) and bool(CITY.search(blob) or "göteborg" in blob.lower())
 
