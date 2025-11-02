@@ -4,11 +4,6 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          mkdir -p out
-          echo "hej" > out/test.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: events-output
-          path: out/*
+      - run: echo "Allt fungerar nu!"
+
 
