@@ -1,27 +1,10 @@
 name: event-agent
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 6 * * 1"
-
+on: workflow_dispatch
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      - name: Install deps
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - name: Run agent
-        run: python agent.py --sources sources.yml --out out --days 180
-      - name: Upload artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: events-output
+      - run: echo "Test körning fungerar!"
+
           path: out/*
           if-no-files-found: warn
