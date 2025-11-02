@@ -1,8 +1,9 @@
 name: event-agent
 on:
+  workflow_dispatch:
   schedule:
-    - cron: "0 6 * * 1"   # kör måndagar 06:00 UTC (~07–08 svensk tid)
-  workflow_dispatch:      # så du kan köra manuellt
+    - cron: "0 6 * * 1"
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -16,10 +17,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run agent
-  run: python agent.py --sources sources.yml --out out --days 180
+        run: python agent.py --sources sources.yml --out out --days 180
       - name: Upload artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: events-output
           path: out/*
-
+          if-no-files-found: warn
