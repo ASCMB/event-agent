@@ -42,11 +42,8 @@ def parse_ics(url, category=None):
 def load_sources(path):
     with open(path, "r", encoding="utf-8") as f: return yaml.safe_load(f) or []
 
-def looks_relevant(rec):
-    # Tillfälligt: ta in allt (vi filtrerar senare)
-    return True
-    blob = " ".join([rec.get("title",""), rec.get("description",""), rec.get("location","")])
-    return bool(KEYWORDS.search(blob)) and bool(CITY.search(blob) or "göteborg" in blob.lower())
+def looks_relevant(
+
 
 def within_horizon(rec, days=60):
     sd = rec.get("start_dt","")
