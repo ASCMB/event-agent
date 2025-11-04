@@ -51,7 +51,9 @@ def parse_ics(url, category=None):
 def load_sources(path):
     with open(path, "r", encoding="utf-8") as f: return yaml.safe_load(f) or []
 
-def looks_relevant(
+def looks_relevant(rec):
+    return True
+
 
 
 def within_horizon(rec, days=60):
