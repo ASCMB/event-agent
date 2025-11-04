@@ -87,6 +87,25 @@ def run(sources_file="sources.yml", out_dir="out", days=60):
 
     rows = [r for r in rows if looks_relevant(r) and within_horizon(r, days)]
     rows = dedupe(rows)
+    # Fallback: om inga rader hittas, lägg till en testpost
+if not rows:
+    from datetime import datetime
+    rows = [dict(
+        title="(Test) Exempel-event",
+        start_dt=str(datetime.utcnow().date()),
+        end_dt="",
+        location="Göteborg",
+        city="Göteborg",
+        organizer="Test",
+        category="test",
+        price="Gratis",
+        registration_url="",
+        source="fallback",
+        source_url="",
+        description="Testpost för att bekräfta kedjan.",
+        id="fallback-1"
+    )]
+
     # sortera
     def key(r):
         try: return dateparser.parse(r.get("start_dt",""))
