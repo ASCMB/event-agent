@@ -1,17 +1,4 @@
 - type: rss
-  url: https://www.eventbrite.com/d/sweden--gothenburg/technology--events/rss/
-  category: tech
-- type: rss
-  url: https://www.eventbrite.com/d/sweden--gothenburg/networking--events/rss/
-  category: networking
-- type: rss
-  url: https://www.eventbrite.com/d/sweden--gothenburg/marketing--events/rss/
-  category: marketing
-- type: rss
-  url: https://www.eventbrite.com/d/sweden--gothenburg/business--events/rss/
-  category: business
-- type: rss
-  url: https://www.eventbrite.com/d/sweden--gothenburg/seminars--events/rss/
-  category: seminars
-
+  url: https://www.eventbrite.com/d/sweden--gothenburg/all-events/rss/
+  category: mixed
 
