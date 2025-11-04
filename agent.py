@@ -4,6 +4,15 @@ from datetime import datetime, timedelta, timezone
 from icalendar import Calendar
 from dateutil import parser as dateparser
 import os
+# TEMPTEST
+if __name__ == "__main__":
+    import feedparser
+    d = feedparser.parse("https://www.eventbrite.com/d/sweden--gothenburg/all-events/rss/")
+    print("Antal entries:", len(d.entries))
+    for e in d.entries[:3]:
+        print("Titel:", e.title)
+    sys.exit()
+
 
 KEYWORDS = re.compile(r"(frukost|breakfast|mingel|seminar|seminarium|nätverk|network)", re.I)
 CITY     = re.compile(r"(göteborg|gothenburg|lindholmen|hisings|mölndal)", re.I)
