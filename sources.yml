@@ -1,6 +1,5 @@
-# Eventbrite RSS – Göteborg
 - type: rss
-  url: https://www.eventbrite.com/d/sweden--gothenburg/science-and-tech--events/rss/
+  url: https://www.eventbrite.com/d/sweden--gothenburg/technology--events/rss/
   category: tech
 - type: rss
   url: https://www.eventbrite.com/d/sweden--gothenburg/networking--events/rss/
@@ -11,4 +10,8 @@
 - type: rss
   url: https://www.eventbrite.com/d/sweden--gothenburg/business--events/rss/
   category: business
+- type: rss
+  url: https://www.eventbrite.com/d/sweden--gothenburg/seminars--events/rss/
+  category: seminars
+
 
